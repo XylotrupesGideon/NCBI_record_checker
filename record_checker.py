@@ -197,7 +197,6 @@ def batch_lookup(protein_id_list, out_dir,full_report=False):
         
 
 #%%  test case
-
 if __name__ == "__main__":  
     test_set=["XP_001637451.2","XP_001629034.2","XP_032230999.1","WP_047149380.1"] 
     batch_lookup(test_set,"test")     
