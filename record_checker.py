@@ -85,7 +85,7 @@ def check_message(protein_id,message,out_dir,add_removed = False):
         print("{} was updated to: {}.".format(protein_id,current_id))
         out_id = current_id
     else:
-        with open("{}/errors.log".format(out_dir),"a") as errors:
+        with open("outputs/{}/_errors.log".format(out_dir),"a") as errors:
             errors.write(str(protein_id))
             errors.write("================")          
             errors.write(str(message))
@@ -193,12 +193,12 @@ def batch_lookup(protein_id_list, out_dir,full_report=False):
         elif full_report:
             out_dict[protein_id] = "removed"
     s = pandas.Series(out_dict)
-    s.to_excel(out_dir + "\_seq_list.xlsx")
+    s.to_excel("outputs\{}\_seq_list.xlsx".format(out_dir))
         
 
 #%%  test case
 if __name__ == "__main__":  
-    test_set=["XP_001637451.2","XP_001629034.2","XP_032230999.1","WP_047149380.1"] 
+    test_set=["XP_001637451.2","XP_001629034.2","XP_032230999.1","WP_047149380.1","EDO48452.1"] 
     batch_lookup(test_set,"test")     
 
 
